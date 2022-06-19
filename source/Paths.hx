@@ -1,5 +1,12 @@
 package;
 
+import animateatlas.AtlasFrameMaker;
+import flixel.math.FlxPoint;
+import flixel.graphics.frames.FlxFrame.FlxFrameAngle;
+import openfl.geom.Rectangle;
+import flixel.math.FlxRect;
+import haxe.xml.Access;
+import openfl.system.System;
 import flixel.FlxG;
 import flixel.graphics.frames.FlxAtlasFrames;
 import openfl.utils.AssetType;
@@ -9,9 +16,9 @@ import flixel.FlxSprite;
 #if MODS_ALLOWED
 import sys.io.File;
 import sys.FileSystem;
+#end
 import flixel.graphics.FlxGraphic;
 import openfl.display.BitmapData;
-#end
 
 import flash.media.Sound;
 
@@ -30,7 +37,8 @@ class Paths
 	public static var customImagesLoaded:Map<String, Bool> = new Map<String, Bool>();
 	public static var customSoundsLoaded:Map<String, Sound> = new Map<String, Sound>();
 	#end
-	
+
+	#if MODS_ALLOWED
 	public static var ignoreModFolders:Array<String> = [
 		'characters',
 		'custom_events',
